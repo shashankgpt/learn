@@ -1,0 +1,23 @@
+const same6 = (arr1,arr2)=>{
+    if(arr1.length!==arr2.length) {
+        return false;
+    }
+    const obj1={};
+    const obj2={}
+    for(let i=0;i<arr1.length;i++){
+        obj1[arr1[i]] = (obj1[arr1[i]] || 0)+1;
+    }
+    for(let i=0;i<arr1.length;i++){
+        obj2[arr2[i]] = (obj2[arr2[i]] || 0)+1;
+    }
+    
+for (let [key, value] of Object.entries(obj1)) {
+  if(obj2.hasOwnProperty(key **2)){
+      if(obj2[key**2]===value) return true;
+      return false;
+  } else {
+      return false;
+  }
+}
+}
+same6([1,2,4,1],[1,4,16,1])
