@@ -1,7 +1,6 @@
 function merge(arr, p,q,r) {
     const n1 = q-p+1; // 0 - 3 = 3
     const n2 = r-q; // 7-3 = 4
-    // console.log(arr, p, q, r)
     const L = new Array(n1+1);
     const R = new Array(n2+1);
     for(let i = 0; i<n1;i++) {
@@ -15,7 +14,8 @@ function merge(arr, p,q,r) {
     R[R.length-1] = Infinity;
     i = 0;
     j = 0;
-    for(let k =0; k< arr.length;k++) {
+    // console.log(arr, p, q, r, L,R)
+    for(let k =p; k<= r;k++) {
         if(L[i] <= R[j]) {
             arr[k] = L[i];
             i++;
@@ -28,12 +28,13 @@ function merge(arr, p,q,r) {
     }
 
 function mergeSort(arr, p, r) {
-    console.log(arr, p, r)
+    // min end -> [ ], [ ], [ ]
     if(p<r) {
+       
         const q = parseInt((p +r) /2);
         mergeSort(arr, p, q);
         mergeSort(arr, q+1,r);
-        merge(arr,p,q,r);
+        merge(arr,p,q,r); // min end -> [ , ] [ , ]
     }
     return arr;
 }
