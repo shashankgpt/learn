@@ -33,7 +33,7 @@ const removeDuplicate = () => {
        
         if(data[nextPointer.data]) {
             prevPointer.next = nextPointer.next
-            nextPointer = nextPointer.next;
+            nextPointer = nextPointer.next; // previous won't change after swap
             continue;
         }
         data[nextPointer.data] = 1;
