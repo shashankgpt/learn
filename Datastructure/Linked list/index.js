@@ -20,7 +20,8 @@ const printList = (node, arr = []) => {
     return printList(node.next, arr);
 }
 
-const insertionAtStart =(node) => {
+const insertionAtStart =(data) => {
+    const node = new Node(data);
     node.next = head;
     head = node;
 }
@@ -45,9 +46,41 @@ const insertionAtEnd = (data) => {
     finalNode.next = node;
 }
 
+const deleteNode = (data) => {
+    fetchLastNode = (node, prev) => {
+        if(node.data !== data)
+        {
+            return fetchLastNode(node.next, node)
+        }
+        return [node, prev] 
+    }
+    const [mainNode, previousNode] = fetchLastNode(head);
+    previousNode.next = mainNode.next;
 
-const node = new Node(0);
-insertionAtStart(node);
+}
+
+const deleteNodeAtgivenPosition = (pos) => {
+    if(pos === 1) {
+        head = head.next;
+        return
+    }
+    let i = 1;
+    let prevNode = head;
+    let mainNode = head;
+    while(i< pos){
+        prevNode = mainNode
+        mainNode = mainNode.next;
+        i++;
+    }
+    prevNode.next = mainNode.next;   
+}
+
+
+
+
+insertionAtStart(0);
 insertionAtGiveNode(node1, 1.1)
 insertionAtEnd(4);
+deleteNode(1.1)
+deleteNodeAtgivenPosition(3)
 console.log(printList(head))
