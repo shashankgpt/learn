@@ -75,7 +75,19 @@ const deleteNodeAtgivenPosition = (pos) => {
     prevNode.next = mainNode.next;   
 }
 
-
+const searchNode = (data) => {
+    let node = head;
+    while(node.next !== null) {
+        if(node.data === data) {
+            return 'Found'
+        }
+        node = node.next;
+    }
+    if(node.next === null) {
+        if(node.data=== data) return 'Found';
+        return 'Not Found';
+    }
+}
 
 
 insertionAtStart(0);
@@ -83,4 +95,5 @@ insertionAtGiveNode(node1, 1.1)
 insertionAtEnd(4);
 deleteNode(1.1)
 deleteNodeAtgivenPosition(3)
+console.log(searchNode(40));
 console.log(printList(head))
