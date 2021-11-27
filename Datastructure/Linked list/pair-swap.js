@@ -25,13 +25,12 @@ let head = node1;
 const swap = () => {
     let pointer1 = head;
     let pointer2 = head.next;
-    while (pointer1.next !== null || pointer2) {
+    // Always check parent entity
+    while ((pointer1 && pointer1.next !== null) || pointer2) {
         [pointer1.data, pointer2.data] = [pointer2.data, pointer1.data]
         pointer1 = pointer2.next;
         pointer2 = pointer1.next
     } 
-
-
 }
 
 console.log(JSON.stringify(head));

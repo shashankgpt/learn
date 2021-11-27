@@ -35,7 +35,8 @@ const detectLoopHashing = () => {
 const detectLoopPointer = () => {
     let nodePointer1 = head;
     let nodePointer2 = head;
-    while(nodePointer2 !== null) {
+    // Failure here because second pointer null could be null
+    while(nodePointer2 !== null || nodePointer2.next !== null) {
         nodePointer1 = nodePointer1.next;
         nodePointer2 = nodePointer2.next.next;
         console.log(nodePointer1, nodePointer2, '\n')
