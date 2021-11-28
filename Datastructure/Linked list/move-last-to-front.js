@@ -1,5 +1,5 @@
 // Move last element to front of a given Linked List - Re do
-
+// Re do
 class Node {
     constructor(val, next = null) {
         this.data = val;
@@ -22,7 +22,7 @@ node5.next = node6;
 node6.next = node7;
 let head = node1;
 
-const lastToFront = () => {
+/** const lastToFrontAndFrontToLast = () => {
     let node = head;
     let first = head;
     let last = null
@@ -39,11 +39,23 @@ const lastToFront = () => {
     }
     const temp = first.next;
     first.next = null
-   prevLast.next = first;
-   last.next = temp
-   head = last
+    prevLast.next = first;
+    last.next = temp
+    head = last
+} */
+
+const lastToFront = () => {
+    let prevLast = null;
+    let h = head;
+    while(h && h.next !== null) {
+        prevLast = h;
+        h = h.next;
+    }
+    const last = prevLast.next;
+    prevLast.next = null;
+    last.next = head;
+    head = last;
 }
 
 lastToFront();
-
-console.log(head.next.next.next.next)
+console.log(JSON.stringify(head))

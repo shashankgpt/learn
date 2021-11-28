@@ -16,7 +16,7 @@
 - [x] Remove duplicates from an unsorted linked list
 - [x] Swap nodes in a linked list without swapping data
 - [x] Pairwise swap elements of a given linked list
-- [ ] Move last element to front of a given Linked List
+- [x] Move last element to front of a given Linked List
 - [ ] Intersection of two Sorted Linked Lists
 - [ ] Intersection point of two Linked Lists.
 - [ ] QuickSort on Singly Linked List

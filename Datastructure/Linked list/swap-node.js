@@ -1,5 +1,5 @@
 // Swap nodes in a linked list without swapping data
-
+// wrong logic - redo
 class Node {
     constructor(val, next = null) {
         this.data = val;
@@ -26,39 +26,29 @@ const swap = (x,y) => {
     if(x===y) {
         return;
     }
-    let node = head;
     let node1 = null;
-    let prevNode1 = null;
-    while(node.next !==null) {
-       if(node.data === x) {
-        node1 = node;
-       }
-       if(!node1) {
-       prevNode1 = node;
-       }
-       node = node.next;
-    }
-    node = head;
-    let node2 = null;
-    let prevNode2 = null;
-    while(node.next !==null) {
-        if(node.data === y) {
-         node2 = node;
-        }
-        if(!node2) {
-        prevNode2 = node;
-        }
-        node = node.next;
-     }
-     if(node1 !== null && node2 !== null) {
-         const tempNode2Next = node2.next;
-         node2.next = node1.next;
-         prevNode1.next = node2;
 
-         node1.next = tempNode2Next;
-         prevNode2.next = node1
-     }
+    let prevX = null;
+    let currentX = head;
+    while(currentX !== null && currentX.data !== x ) {
+        prevX = currentX;
+        currentX = currentX.next
+    }
+
+    let prevY = null;
+    let currentY = head;
+    while(currentY !== null && currentY.data !== y ) {
+        prevY = currentY;
+        currentY = currentY.next
+    }
+    // swapping node logic
+    const nextOfY = currentY.next;
+    currentY.next = currentX.next;
+    prevX.next = currentY;
+    prevY.next = currentX;
+    currentX.next = nextOfY;
+
 }
 console.log(JSON.stringify(head));
-swap(2,6)
+swap(4,6)
 console.log(JSON.stringify(head));
