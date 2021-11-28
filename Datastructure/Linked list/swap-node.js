@@ -41,14 +41,37 @@ const swap = (x,y) => {
         prevY = currentY;
         currentY = currentY.next
     }
-    // swapping node logic
+    let isNeighbours = currentX.next === currentY ? 1 : currentY.next === currentX ? 2 : 0;
+    // Swaping pointer
     const nextOfY = currentY.next;
     currentY.next = currentX.next;
-    prevX.next = currentY;
-    prevY.next = currentX;
     currentX.next = nextOfY;
 
+    // Handling adjacent
+    if(isNeighbours) {
+        if(isNeighbours === 1) {
+            currentY.next = prevX.next;
+            prevX.next = currentY;
+        return;
+        } else {
+            currentX.next = prevY.next;
+            prevY.next = currentX;
+        return;
+        }
+    }
+    
+    // handling first and last
+    if(prevX) {
+        prevX.next = currentY;
+    } else {
+        head = currentY;
+    } 
+    if(prevY) {
+        prevY.next = currentX;
+    } else {
+        head = currentX;
+    } 
 }
-console.log(JSON.stringify(head));
-swap(4,6)
+// console.log(JSON.stringify(head));
+swap(5,4)
 console.log(JSON.stringify(head));
