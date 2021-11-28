@@ -24,9 +24,9 @@ let head = node1
 const getMiddleNode = () => {
     let nodePointer1 = head
     let nodePointer2 = head;
-    while(nodePointer2.next !== null) {
+    while(nodePointer2 && nodePointer2.next !== null) {
        nodePointer1 = nodePointer1.next;
-       nodePointer2 = nodePointer1.next;
+       nodePointer2 = nodePointer2.next.next;
     }
     return nodePointer1;
 }
