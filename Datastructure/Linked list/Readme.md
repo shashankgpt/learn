@@ -8,20 +8,20 @@
 - [x] Write a function to get Nth node in a Linked List
 - [x] Nth node from the end of a Linked List
 - [x] Print the middle of a given linked list
-- [ ] Write a function that counts the number of times a given int occurs in a Linked List
+- [x] Write a function that counts the number of times a given int occurs in a Linked List
 - [x] Detect loop in a linked list
-- [ ] Find length of loop in linked list
+- [x] Find length of loop in linked list
 - [ ] Function to check if a singly linked list is palindrome
 - [x] Remove duplicates from a sorted linked list
 - [x] Remove duplicates from an unsorted linked list
-- [x] Swap nodes in a linked list without swapping data
+- [ ] Swap nodes in a linked list without swapping data
 - [x] Pairwise swap elements of a given linked list
 - [x] Move last element to front of a given Linked List
-- [ ] Intersection of two Sorted Linked Lists
-- [ ] Intersection point of two Linked Lists.
+- [ ] Intersection of two Sorted Linked Lists part 1
+- [ ] Intersection point of two Linked Lists. part 2¯
 - [ ] QuickSort on Singly Linked List
 - [ ] Segregate even and odd nodes in a Linked List
-- [ ] Reverse a linked list
+- [x] Reverse a linked list
 - [ ] Recursive function to print reverse of a Linked List
 - [ ] Iteratively Reverse a linked list using only 2 pointers (An Interesting Method)
 - [ ] Merge two sorted linked lists such that merged list is in reverse order

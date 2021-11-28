@@ -28,4 +28,33 @@ const reverseList = () => {
     return newList;
 }
 
-console.log(JSON.stringify(reverseList()));
+const reverseListRecursive = (h,newList) => {
+    const data = h.data;
+        const newNode = new Node(data);
+        newNode.next = newList;
+        newList = newNode; 
+        h = h.next;
+        if (h) {
+            return reverseListRecursive(h, newList)
+        }
+        return newList;
+    
+}
+
+const reverseListRecursiveWithZeroSpaceComplexity = () => {
+   let prev = null;
+   let current = node1;
+   let nextNode =null;
+
+   while(current) {
+    nextNode = current.next;
+    current.next = prev;
+    prev = current;
+    current = nextNode;
+   }
+   return prev;
+}
+
+console.log(JSON.stringify(reverseListRecursiveWithZeroSpaceComplexity()));
+// console.log(JSON.stringify(reverseListRecursive(node1, null)))
+// console.log(JSON.stringify(reverseList()));
