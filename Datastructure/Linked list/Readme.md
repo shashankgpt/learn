@@ -22,9 +22,9 @@
 - [ ] QuickSort on Singly Linked List
 - [ ] Segregate even and odd nodes in a Linked List
 - [x] Reverse a linked list
-- [ ] Recursive function to print reverse of a Linked List
-- [ ] Iteratively Reverse a linked list using only 2 pointers (An Interesting Method)
-- [ ] Merge two sorted linked lists such that merged list is in reverse order
+- [x] Recursive function to print reverse of a Linked List
+- [x] Iteratively Reverse a linked list using only 2 pointers (An Interesting Method)
+- [x] Merge two sorted linked lists such that merged list is in reverse order
 - [ ] Reverse a Linked List in groups of given size
 - [ ] Reverse a Linked List in groups of given size | Set 2
 - [ ] Reverse alternate K nodes in a Singly Linked List
