@@ -1,4 +1,4 @@
-// Segregate even and odd nodes in a Linked List
+// Segregate even and odd nodes in a Linked List and keep the order same
 
 class Node {
     constructor(val, next = null) {
@@ -69,6 +69,7 @@ const separateEvenByTwoListWay = () => {
     let current = node1;
     let prev = null;
     let newList = null;
+    let nexter = null;
     while(current && current.next !== null) {
         if(current.data % 2 !== 0) {
             const currentNode = current;
@@ -81,9 +82,10 @@ const separateEvenByTwoListWay = () => {
             currentNode.next = null;
             if(!newList) {
             newList = currentNode;
+            nexter = currentNode;
             } else {
-                currentNode.next = newList;
-                newList = currentNode;
+                nexter.next = currentNode;
+                nexter = nexter.next;
             }
         } else {
             prev = current;
