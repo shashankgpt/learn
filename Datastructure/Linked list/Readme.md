@@ -20,7 +20,7 @@
 - [ ] Intersection of two Sorted Linked Lists part 1
 - [ ] Intersection point of two Linked Lists. part 2¯
 - [ ] QuickSort on Singly Linked List
-- [ ] Segregate even and odd nodes in a Linked List
+- [x] Segregate even and odd nodes in a Linked List
 - [x] Reverse a linked list
 - [x] Recursive function to print reverse of a Linked List
 - [x] Iteratively Reverse a linked list using only 2 pointers (An Interesting Method)
