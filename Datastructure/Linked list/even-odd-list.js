@@ -4,7 +4,7 @@ class Node {
     constructor(val, next = null) {
         this.data = val;
         this.next = next;
-    } 
+    }
 }
 
 let node1 = new Node(17);
@@ -30,18 +30,19 @@ node9.next = node10;
 const separateEvenOdd = () => {
     let last = node1;
     let listLen = 0
-    while(last.next !== null) {
+    while (last.next !== null) {
         last = last.next;
-        listLen +=1;
+        listLen += 1;
     }
     let current = node1;
     let prev = null;
     let i = 0;
-    while(current && current.next !== null && i< listLen) {
-        i = i+1;
-        if(current.data % 2 !== 0) {
+    while (current && current.next !== null) {
+        i = i + 1;
+        if (current.data % 2 !== 0) {
+            console.log(JSON.stringify(current));
             let addedToLast = current;
-            if(prev && prev.next) {
+            if (prev && prev.next) {
                 // deleting the node
                 prev.next = current.next;
             } else {
@@ -55,10 +56,10 @@ const separateEvenOdd = () => {
 
             // updating last
             last = last.next;
-            
+
         } else {
-        prev = current;
-        current = current.next;
+            prev = current;
+            current = current.next;
         }
     }
     console.log(JSON.stringify(node1));
@@ -70,19 +71,19 @@ const separateEvenByTwoListWay = () => {
     let prev = null;
     let newList = null;
     let nexter = null;
-    while(current && current.next !== null) {
-        if(current.data % 2 !== 0) {
+    while (current && current.next !== null) {
+        if (current.data % 2 !== 0) {
             const currentNode = current;
-            if(prev) {
-            prev.next = current.next;
+            if (prev) {
+                prev.next = current.next;
             } else {
                 node1 = current.next;
             }
             current = current.next;
             currentNode.next = null;
-            if(!newList) {
-            newList = currentNode;
-            nexter = currentNode;
+            if (!newList) {
+                newList = currentNode;
+                nexter = currentNode;
             } else {
                 nexter.next = currentNode;
                 nexter = nexter.next;
@@ -93,8 +94,8 @@ const separateEvenByTwoListWay = () => {
         }
 
     }
-    current.next = newList; 
+    current.next = newList;
     console.log(JSON.stringify(node1));
 }
-separateEvenByTwoListWay();
-// separateEvenOdd();
+// separateEvenByTwoListWay();
+separateEvenOdd();
