@@ -34,13 +34,14 @@ const separateEvenOdd = () => {
         last = last.next;
         listLen += 1;
     }
+    // newLast for iteration and last is pointer
+    let newLast = last;
     let current = node1;
     let prev = null;
     let i = 0;
-    while (current && current.next !== null) {
+    while (current && current.next !== null&& current !== last) {
         i = i + 1;
         if (current.data % 2 !== 0) {
-            console.log(JSON.stringify(current));
             let addedToLast = current;
             if (prev && prev.next) {
                 // deleting the node
@@ -52,25 +53,26 @@ const separateEvenOdd = () => {
             current = current.next;
             // adding to last (it will update current as well)
             addedToLast.next = null;
-            last.next = addedToLast;
+            newLast.next = addedToLast;
 
             // updating last
-            last = last.next;
+            newLast = newLast.next;
 
         } else {
             prev = current;
             current = current.next;
         }
     }
-    console.log(JSON.stringify(node1));
+    console.log(JSON.stringify(node1), last, newLast);
 }
 
 
 const separateEvenByTwoListWay = () => {
     let current = node1;
     let prev = null;
-    let newList = null;
-    let nexter = null;
+     // newListerIteratorLastPointer for iteration and lastListStart is pointer
+    let lastListStart = null;
+    let newListerIteratorLastPointer = null;
     while (current && current.next !== null) {
         if (current.data % 2 !== 0) {
             const currentNode = current;
@@ -81,12 +83,12 @@ const separateEvenByTwoListWay = () => {
             }
             current = current.next;
             currentNode.next = null;
-            if (!newList) {
-                newList = currentNode;
-                nexter = currentNode;
+            if (!lastListStart) {
+                lastListStart = currentNode;
+                newListerIteratorLastPointer = currentNode;
             } else {
-                nexter.next = currentNode;
-                nexter = nexter.next;
+                newListerIteratorLastPointer.next = currentNode;
+                newListerIteratorLastPointer = newListerIteratorLastPointer.next;
             }
         } else {
             prev = current;
@@ -94,7 +96,7 @@ const separateEvenByTwoListWay = () => {
         }
 
     }
-    current.next = newList;
+    current.next = lastListStart;
     console.log(JSON.stringify(node1));
 }
 // separateEvenByTwoListWay();
