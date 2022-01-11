@@ -35,7 +35,11 @@ const alternateEvenOddList = (head) => {
             current = current.next;
         } else {
            const newListData = skipNode(current, !isEven);
+           if (prev) {
            prev.next = newListData[1];
+           } else {
+               head = newListData[1];
+           }
            current = newListData[1];
         }
     }
@@ -58,7 +62,7 @@ const skipNode = (node, removeType) => {
     }
 }
 
-// console.log(JSON.stringify(alternateEvenOddList(node1)));
+console.log(JSON.stringify(alternateEvenOddList(node1)));
 
 const alternateEvenOddListWay2 = (node) => {
     let current = node;
@@ -115,4 +119,4 @@ const combineList = (evenList, oddList) => {
 }
 
 
-console.log(JSON.stringify(alternateEvenOddListWay2(node1)));
+// console.log(JSON.stringify(alternateEvenOddListWay2(node1)));
