@@ -5,16 +5,14 @@ class Node {
     }
 }
 
-let node1 = new Node(17);
-const node2 = new Node(15);
-const node3 = new Node(8);
-const node4 = new Node(12);
-const node5 = new Node(10);
-const node6 = new Node(5);
-const node7 = new Node(4);
-const node8 = new Node(1);
-const node9 = new Node(7);
-const node10 = new Node(6);
+let node1 = new Node(10);
+const node2 = new Node(1);
+const node3 = new Node(2);
+const node4 = new Node(3);
+const node5 = new Node(5);
+const node6 = new Node(6);
+const node7 = new Node(7);
+const node8 = new Node(8);
 node1.next = node2;
 node2.next = node3;
 node3.next = node4;
@@ -22,8 +20,7 @@ node4.next = node5;
 node5.next = node6;
 node6.next = node7;
 node7.next = node8;
-node8.next = node9;
-node9.next = node10;
+
 
 
 let isEven = false;
@@ -61,4 +58,61 @@ const skipNode = (node, removeType) => {
     }
 }
 
-console.log(JSON.stringify(alternateEvenOddList(node1)));
+// console.log(JSON.stringify(alternateEvenOddList(node1)));
+
+const alternateEvenOddListWay2 = (node) => {
+    let current = node;
+    let evenList = 0;
+    let evenListPointer = null;
+    let oddList = 0;
+    let oddListPointer = null;
+    while(current) {
+        const nexter = current.next;
+        current.next = null;
+        if((current.data % 2) === 0) { 
+            if(evenList === 0) {
+                evenList = current;
+                evenListPointer = current;
+            } else {
+                evenListPointer.next = current;
+                evenListPointer = evenListPointer.next;
+            }
+        } else {
+            if (oddList === 0) {
+                oddList = current;
+                oddListPointer = current;
+            } else {
+                oddListPointer.next = current;
+                oddListPointer = oddListPointer.next;
+            }
+        }
+        current = nexter;
+    }
+    return combineList(evenList, oddList)
+}
+const combineList = (evenList, oddList) => {
+    let oddListPointer = oddList.next;
+    let evenListPointer = evenList;
+    oddList.next = null;
+    let list = oddList;
+    let current = oddList;
+
+    while(oddListPointer || evenListPointer) {
+        const oddListNexter = oddListPointer ? oddListPointer.next: null;
+        const evenListNexter = evenListPointer ? evenListPointer.next: null;
+        if (oddListPointer) {
+        oddListPointer.next = null;
+        }
+        if(evenListPointer) {
+        evenListPointer.next = oddListPointer;
+        }
+        current.next = evenListPointer;
+        current = oddListPointer;
+        oddListPointer = oddListNexter;
+        evenListPointer = evenListNexter;
+    }
+    return list;
+}
+
+
+console.log(JSON.stringify(alternateEvenOddListWay2(node1)));

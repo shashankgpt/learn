@@ -28,4 +28,4 @@
 - [ ] Reverse a Linked List in groups of given size
 - [ ] Reverse a Linked List in groups of given size | Set 2
 - [ ] Reverse alternate K nodes in a Singly Linked List
-- [ ] Alternate Odd and Even Nodes in a Singly Linked List
+- [x] Alternate Odd and Even Nodes in a Singly Linked List
