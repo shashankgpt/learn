@@ -17,15 +17,15 @@
 - [ ] Swap nodes in a linked list without swapping data
 - [x] Pairwise swap elements of a given linked list
 - [x] Move last element to front of a given Linked List
-- [ ] Intersection of two Sorted Linked Lists part 1
-- [ ] Intersection point of two Linked Lists. part 2¯
-- [ ] QuickSort on Singly Linked List
+- [x] Intersection of two Sorted Linked Lists part 1
+- [x] Intersection point of two Linked Lists. part 2 - it has 8 solution. M1,M2,M3,M6,M7
+- [ ] QuickSort on Singly Linked List. don't know quick sort. hence left
 - [x] Segregate even and odd nodes in a Linked List
 - [x] Reverse a linked list
 - [x] Recursive function to print reverse of a Linked List
 - [x] Iteratively Reverse a linked list using only 2 pointers (An Interesting Method)
 - [x] Merge two sorted linked lists such that merged list is in reverse order
-- [ ] Reverse a Linked List in groups of given size
-- [ ] Reverse a Linked List in groups of given size | Set 2
-- [ ] Reverse alternate K nodes in a Singly Linked List
+- [x] Reverse a Linked List in groups of given size
+- [ ] Reverse a Linked List in groups of given size | Set 2 - using stack. hence left
+- [x] Reverse alternate K nodes in a Singly Linked List
 - [x] Alternate Odd and Even Nodes in a Singly Linked List
