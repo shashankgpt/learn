@@ -44,10 +44,9 @@ const swap = (list,x,y) => {
         currentX.next = currentY;
         prevOfY.next = currentX;
     } else if (currentX.next && currentX.next.data ===y) {
-        const nextOfX = currentX.next;
-        currentX.next = nextOfX.next;
-        nextOfX.next = currentX;
-        prevOfX.next = nextOfX;
+        currentX.next = currentY.next;
+        currentY.next = currentX;
+        prevOfX.next = currentY;
     } else {
         const currentYNext = currentY.next;
         currentY.next = currentX.next;
