@@ -11,7 +11,7 @@
 - [x] Write a function that counts the number of times a given int occurs in a Linked List
 - [x] Detect loop in a linked list
 - [x] Find length of loop in linked list
-- [ ] Function to check if a singly linked list is palindrome
+- [x] Function to check if a singly linked list is palindrome
 - [x] Remove duplicates from a sorted linked list
 - [x] Remove duplicates from an unsorted linked list
 - [ ] Swap nodes in a linked list without swapping data
