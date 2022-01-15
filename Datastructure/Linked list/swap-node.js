@@ -46,8 +46,7 @@ const swap = (list,x,y) => {
     } else if (currentX.next && currentX.next.data ===y) {
         const nextOfX = currentX.next;
         currentX.next = nextOfX.next;
-        const node = currentX;
-        nextOfX.next = node;
+        nextOfX.next = currentX;
         prevOfX.next = nextOfX;
     } else {
         const currentYNext = currentY.next;
@@ -67,7 +66,7 @@ const swap = (list,x,y) => {
     }
     return list;
 }
-const answer = swap(head, 7, 1)
+const answer = swap(head, 4, 3)
 // console.log(answer, answer.next)
 console.log(JSON.stringify(answer));
 // console.log(answer, answer.next, answer.next.next);
