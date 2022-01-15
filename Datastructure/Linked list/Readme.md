@@ -14,7 +14,7 @@
 - [x] Function to check if a singly linked list is palindrome
 - [x] Remove duplicates from a sorted linked list
 - [x] Remove duplicates from an unsorted linked list
-- [ ] Swap nodes in a linked list without swapping data
+- [x] Swap nodes in a linked list without swapping data
 - [x] Pairwise swap elements of a given linked list
 - [x] Move last element to front of a given Linked List
 - [x] Intersection of two Sorted Linked Lists part 1

@@ -22,56 +22,52 @@ node5.next = node6;
 node6.next = node7;
 let head = node1
 
-const swap = (x,y) => {
-    if(x===y) {
-        return;
-    }
-    let node1 = null;
-
-    let prevX = null;
-    let currentX = head;
-    while(currentX !== null && currentX.data !== x ) {
-        prevX = currentX;
-        currentX = currentX.next
+const swap = (list,x,y) => {
+    // searchOfX
+    let currentX = list;
+    let prevOfX = null;
+    while(currentX.data !== x) {
+        prevOfX = currentX;
+        currentX = currentX.next;
     }
 
-    let prevY = null;
-    let currentY = head;
-    while(currentY !== null && currentY.data !== y ) {
-        prevY = currentY;
-        currentY = currentY.next
+    // searchOfY
+    let currentY = list;
+    let prevOfY = null;
+    while(currentY.data !== y) {
+        prevOfY = currentY;
+        currentY = currentY.next;
     }
-    let isNeighbours = currentX.next === currentY ? 1 : currentY.next === currentX ? 2 : 0;
-    // Swaping pointer
-    const nextOfY = currentY.next;
-    currentY.next = currentX.next;
-    currentX.next = nextOfY;
-
-    // Handling adjacent
-    if(isNeighbours) {
-        if(isNeighbours === 1) {
-            currentY.next = prevX.next;
-            prevX.next = currentY;
-        return;
+    // check for adjacent
+    if(prevOfX && prevOfX.data === y) {
+        currentY.next = currentX.next;
+        currentX.next = currentY;
+        prevOfY.next = currentX;
+    } else if (currentX.next && currentX.next.data ===y) {
+        const nextOfX = currentX.next;
+        currentX.next = nextOfX.next;
+        const node = currentX;
+        nextOfX.next = node;
+        prevOfX.next = nextOfX;
+    } else {
+        const currentYNext = currentY.next;
+        currentY.next = currentX.next;
+        if(prevOfX) {
+            prevOfX.next = currentY;
         } else {
-            currentX.next = prevY.next;
-            prevY.next = currentX;
-        return;
+             list = currentY;
         }
+        currentX.next = currentYNext
+        if (prevOfY) {
+            prevOfY.next = currentX;
+        } else {
+            list = currentX;
+        }
+        
     }
-    
-    // handling first and last
-    if(prevX) {
-        prevX.next = currentY;
-    } else {
-        head = currentY;
-    } 
-    if(prevY) {
-        prevY.next = currentX;
-    } else {
-        head = currentX;
-    } 
+    return list;
 }
-// console.log(JSON.stringify(head));
-swap(5,4)
-console.log(JSON.stringify(head));
+const answer = swap(head, 7, 1)
+// console.log(answer, answer.next)
+console.log(JSON.stringify(answer));
+// console.log(answer, answer.next, answer.next.next);
