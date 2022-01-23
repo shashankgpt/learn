@@ -29,3 +29,10 @@
 - [ ] Reverse a Linked List in groups of given size | Set 2 - using stack. hence left
 - [x] Reverse alternate K nodes in a Singly Linked List
 - [x] Alternate Odd and Even Nodes in a Singly Linked List
+- [x] Delete alternate nodes of a Linked List
+- [x] Add two numbers represented by linked lists
+- [ ] Find a triplet from three linked lists with sum equal to a given number
+- [ ] Rotate a Linked List
+- [ ] Sort a linked list of 0s, 1s and 2s
+- [ ] Delete N nodes after M nodes of a linked list
+- [ ] Add two numbers represented by linked lists | Set 2
