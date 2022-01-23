@@ -8,9 +8,9 @@ class Node {
 }
 
 
-let node1 = new Node(5);
-const node2 = new Node(6);
-const node3 = new Node(3);
+let node1 = new Node(7);
+const node2 = new Node(5);
+const node3 = new Node(9);
 const node4 = new Node(8);
 const node5 = new Node(4);
 const node6 = new Node(2);
@@ -21,14 +21,15 @@ const node8 = new Node(6)
 
 node1.next = node2;
 node2.next = node3;
-//node3.next = node7;
-// node7.next = node8;
+node3.next = node7;
+node7.next = node8;
 node4.next = node5;
-node5.next = node6;
+// node5.next = node6;
 
 let head;
 let current;
 let carry = 0;
+// 1405
 const addNumber = (num1, num2) => {
     if (num1 === null || num2 === null) {
         return;
@@ -43,10 +44,11 @@ const addNumber = (num1, num2) => {
         head = node;
         current = node;
     } else if(current) {
-        current.next = node;
-        current = current.next;
+        node.next = current;
+        current = node;
     }
-    return head;    
+    console.log('\n',node, '\n');
+    return node;    
 }
 
 const equaliseNode = (node1, node4) => {
@@ -109,10 +111,12 @@ const revereNode = (head) => {
 console.log(JSON.stringify(node1), JSON.stringify(node4));
 const [head1, head4] = equaliseNode(node1, node4);
 console.log(JSON.stringify(head1), JSON.stringify(head1));
-addNumber(head1, head4);
+let list = addNumber(head1, head4);
 if(carry) {
-current.next = new Node(carry);
+    const newList = new Node(carry);
+    newList.next = list;
+    list = newList;
 }
-console.log(JSON.stringify(head));
-revereNode(head);
-console.log(JSON.stringify(newListHead));
+console.log(JSON.stringify(list));
+//revereNode(head);
+// console.log(JSON.stringify(newListHead));
