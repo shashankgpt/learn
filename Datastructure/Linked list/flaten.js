@@ -47,7 +47,30 @@ node7.next = node11;
 node7.child = node17
 node17.next = node6;
 
+// console.log(JSON.stringify(node10))
 
+const findTail = (node) => {
+    let tail = node;
+    while(tail.next) {
+        tail = tail.next;
+    }
+    return tail;
+}
 
+const flaten = (head)=> {
+let current = head;
+let tail = findTail(head);
 
-console.log(JSON.stringify(node10))
+while(current) {
+    if (current && current.child){
+    tail.next = current.child;
+    tail = findTail(tail);
+    current.child = null;
+    }
+    current = current.next;
+}
+return head;
+
+}
+
+console.log(JSON.stringify(flaten(node10)));
