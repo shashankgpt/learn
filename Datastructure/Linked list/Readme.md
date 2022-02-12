@@ -34,11 +34,11 @@
 - [x] [array] sum of 2 numbers in a array, equal to given number
 - [x] [array] sum of 2 numbers in 2 array, equal to given number
 - [x] [array] sum of 3 numbers in 3 array, equal to given number
-- [ ] Find a triplet from three linked lists with sum equal to a given number
+- [x] Find a triplet from three linked lists with sum equal to a given number
 - [x] Rotate a Linked List
 - [x] Sort a linked list of 0s, 1s and 2s
 - [x] Delete N nodes after M nodes of a linked list
-- [ ] Add two numbers represented by linked lists | Set 2
+- [x] Add two numbers represented by linked lists | Set 2
 - [ ] Flatten a multilevel linked list
 - [ ] Pairwise swap elements of a given linked list by changing links
 - [x] Insertion Sort for Singly Linked List
