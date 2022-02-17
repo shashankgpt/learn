@@ -39,6 +39,17 @@
 - [x] Sort a linked list of 0s, 1s and 2s
 - [x] Delete N nodes after M nodes of a linked list
 - [x] Add two numbers represented by linked lists | Set 2
-- [ ] Flatten a multilevel linked list
-- [ ] Pairwise swap elements of a given linked list by changing links
+- [x] Flatten a multilevel linked list
 - [x] Insertion Sort for Singly Linked List
+- [x] Point to next higher value node in a linked list with an arbitrary pointer
+- [ ] Point to next higher value node in a linked list with an arbitrary pointer with merge sort
+- [ ] Rearrange a Linked List in Zig-Zag fashion
+- [x] Point arbit pointer to greatest value right side node in a linked list
+- [x] Check if a linked list of strings forms a palindrome
+- [x] Sort linked list which is already sorted on absolute values
+- [x] Delete last occurrence of an item from linked list
+- [x] Decimal Equivalent of Binary Linked List
+- [ ] Flatten a multi-level linked list | Set 2 (Depth wise)
+- [ ] Rearrange a given list such that it consists of alternating minimum maximum elements
+- [ ] Subtract Two Numbers represented as Linked Lists
+- [ ] Find pair for given sum in a sorted singly linked without extra space
