@@ -55,7 +55,7 @@
 - [ ] Rearrange a given list such that it consists of alternating minimum maximum elements
 - [x] Subtract Two Numbers represented as Linked Lists
 - [x] Find pair for given sum in a sorted singly linked without extra space
-- [ ] Partitioning a linked list around a given value and keeping the original order
+- [x] Partitioning a linked list around a given value and keeping the original order
 - [ ] Check linked list with a loop is palindrome or not
 - [ ] Clone a linked list with next and random pointer in O(1) space
 - [ ] Length of longest palindrome list in a linked list using O(1) extra space
