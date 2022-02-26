@@ -60,6 +60,6 @@
 - [ ] Clone a linked list with next and random pointer in O(1) space
 - [ ] Length of longest palindrome list in a linked list using O(1) extra space
 - [ ] Adding two polynomials using Linked List
-- [ ] Implementing Iterator pattern of a single Linked List
-- [ ] Move all occurrences of an element to end in a linked list
-- [ ] Remove all occurrences of duplicates from a sorted Linked List
+- [x] Implementing Iterator pattern of a single Linked List
+- [x] Move all occurrences of an element to end in a linked list
+- [x] Remove all occurrences of duplicates from a sorted Linked List
