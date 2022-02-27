@@ -59,7 +59,21 @@
 - [ ] Check linked list with a loop is palindrome or not
 - [ ] Clone a linked list with next and random pointer in O(1) space
 - [ ] Length of longest palindrome list in a linked list using O(1) extra space
-- [ ] Adding two polynomials using Linked List
+- [x] Adding two polynomials using Linked List
 - [x] Implementing Iterator pattern of a single Linked List
 - [x] Move all occurrences of an element to end in a linked list
 - [x] Remove all occurrences of duplicates from a sorted Linked List
+- [ ] Multiply two numbers represented by Linked Lists
+- [x] Find the sum of last n nodes of the given Linked List
+- [ ] Merge Sort for Linked Lists
+- [ ] In-place Merge two linked lists without changing links of first list
+- [ ] Merge K sorted linked lists | Set 1
+- [ ] Merge k sorted linked lists | Set 2 (Using Min Heap)
+- [ ] Merge two sorted lists (in-place) (no extra space)
+- [ ] Union and Intersection of two Linked Lists
+- [ ] Union and Intersection of two linked lists | Set-2 (Using Merge Sort)
+- [ ] Union and Intersection of two linked lists | Set-3 (Hashing)
+- [ ] Recursive selection sort for singly linked list | Swapping node links
+- [ ] Sort a linked list of 0s, 1s and 2s by changing links
+- [ ] Rotate Linked List block wise
+- [ ] Count rotations in sorted and rotated linked list
