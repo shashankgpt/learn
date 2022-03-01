@@ -63,7 +63,7 @@
 - [x] Implementing Iterator pattern of a single Linked List
 - [x] Move all occurrences of an element to end in a linked list
 - [x] Remove all occurrences of duplicates from a sorted Linked List
-- [ ] Multiply two numbers represented by Linked Lists
+- [x] Multiply two numbers represented by Linked Lists
 - [x] Find the sum of last n nodes of the given Linked List
 - [ ] Merge Sort for Linked Lists
 - [ ] In-place Merge two linked lists without changing links of first list
@@ -76,4 +76,4 @@
 - [ ] Recursive selection sort for singly linked list | Swapping node links
 - [ ] Sort a linked list of 0s, 1s and 2s by changing links
 - [ ] Rotate Linked List block wise
-- [ ] Count rotations in sorted and rotated linked list
+- [x] Count rotations in sorted and rotated linked list
