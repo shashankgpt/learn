@@ -2,7 +2,7 @@
 
 ## Simple Sorting Algo
 
-- [ ]  Insertion Sort
+- [x]  Insertion Sort
 - [ ]  Merge Sort
 - [ ]  Selection Sort
 - [ ]  Quick sort

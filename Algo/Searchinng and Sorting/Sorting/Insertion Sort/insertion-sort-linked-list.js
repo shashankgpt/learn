@@ -17,33 +17,29 @@ node3.next = node4;
 node4.next = node5;
 
 const sortLinkedList = (head) => {
-    let prev = head;
-    let current = head.next;
-    while(current) {
-        let curentNext = current.next;
-        let prev2 = null;
-        let startPoint = head;
-        while(startPoint !== current) {
-          if(startPoint.data > current.data) {
-            prev.next = current.next;
-             if (startPoint === head) {
-                 current.next = head;
-                 head = current;
-                 current =  prev
-             } else {
-                current.next = prev2.next
-                prev2.next = current;
-              
-             }
-             break;
-          }
-          prev2 = startPoint;
-          startPoint = startPoint.next
+    let sorted = head;
+    let key = head.next;
+    while(key) {
+        let prevCurrent = null;
+        let current = head;
+        while(current && current !== key) {
+            if(current.data > key.data) {
+                sorted.next = key.next;
+                key.next = current;
+                if(current === head ) {
+                    prevCurrent = key;
+                    head = key;
+                } else {
+                    prevCurrent.next = key;
+                }
+                break;
+            }
+            prevCurrent = current;
+            current = current.next
         }
-        prev = current;
-        current = curentNext;
+        sorted = key;
+        key = key.next;
     }
-
     return head;
 }
 
