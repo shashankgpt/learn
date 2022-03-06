@@ -51,4 +51,31 @@ const addNode = (list, node) => {
     return list;
 } 
 
-console.log(JSON.stringify(sortList(node1)))
+const sortList2 = (head) => {
+    let resultList = null;
+
+    while(head) {
+        const next = head.next;
+        if(!resultList || head.data < resultList.data) {
+            head.next = resultList;
+            resultList = head;
+        } else {
+            let current = resultList;
+            while(current) {
+                // bigger node and last node handling
+                if ((current.next && current.next.data > head.data) || current.next == null) {
+                    head.next = current.next
+                    current.next = head;
+                    break;
+                }
+                current = current.next;
+            }
+            
+    
+        }
+        head =  next;
+    }
+    return resultList;
+}
+
+console.log(JSON.stringify(sortList2(node1)))
