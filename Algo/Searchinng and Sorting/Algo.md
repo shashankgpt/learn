@@ -3,7 +3,7 @@
 ## Simple Sorting Algo
 
 - [x]  Insertion Sort
-- [ ]  Merge Sort
+- [x]  Merge Sort
 - [ ]  Selection Sort
 - [ ]  Quick sort
 - [ ]  Bubble sort
