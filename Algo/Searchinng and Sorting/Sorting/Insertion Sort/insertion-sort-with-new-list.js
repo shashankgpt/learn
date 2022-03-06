@@ -30,12 +30,10 @@ const sortList = (head) => {
 
 const addNode = (list, node) => {
     node.next = null;
-    if(!list) {
-        return node;
-    }
-    else if (list.data > node.data) {
+
+    if (!list || list.data > node.data) {
         node.next = list;
-        list = node;
+        return node;
     } else {
         let current = list;
         while(current) {
