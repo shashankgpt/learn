@@ -20,20 +20,18 @@ const selectionSort = (head, result = null) => {
         head.next = result;
         return head;
     }
-    let prev = head;
-    let current = head.next;
-    
+    let current = head;
+
     let largestPrev = null;
     let largest = head;
-    while(current) {
-        if(largest.data < current.data) {
-            largestPrev = prev;
-            largest = current;
+    while(current.next) {
+        if(largest.data < current.next.data) {
+            largestPrev = current;
+            largest = current.next;
         }
-        prev = current;
         current = current.next;
     }
-
+    
     if (largestPrev) {
     largestPrev.next = largest.next;
     } else {
