@@ -10,22 +10,17 @@ const input = [35, 20, 30, 90, 40, 50, 70]
 
 // Always pick first/last element as pivot.
 const partition = (arr,  low, high) => {
-    const pivot = arr[low];
-    let i = low;
-    let j = high;
-    while(i<j) {
-        while (pivot >= arr[i]) { // find larger and increment till you find element till pivot is larger
+    const pivot = arr[high];
+    let i = low -1;
+    for (let j = low; j<high -1;j++) {
+        if (arr[j]< pivot) {
             i++;
-        }
-        while (pivot < arr[j]) { // find smaller and increment till you find element till pivot is smaller
-            j--;
-        }
-        if (i<j) {
-        [arr[i], arr[j]] = [arr[j], arr[i]];
+            [arr[i], arr[j]] = [arr[j], arr[i]];
         }
     }
-    [arr[low], arr[j]] = [arr[j], arr[low]];
-    return j;
+    [arr[i+1], arr[high]] = [arr[high], arr[i+1]];
+    console.log(arr, i+1);
+   return i+1;
 }
 
 const quickSort = (input, low, high) => {
@@ -33,10 +28,7 @@ const quickSort = (input, low, high) => {
         const pi = partition(input, low, high);
         quickSort(input, low, pi);
         quickSort(input, pi+1, high)
-    } else {
-        return input;
     }
-    
 }
 
 console.log(quickSort(input, 0 , 6));

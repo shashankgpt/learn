@@ -6,7 +6,7 @@
 - [x]  Merge Sort
 - [x]  Selection Sort
 - [ ]  Quick sort
-- [ ]  Bubble sort
+- [x]  Bubble sort
 
 ## Advanced Sorting Algo
 
