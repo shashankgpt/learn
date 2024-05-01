@@ -4,16 +4,16 @@
 
 ## Types of Pattern
 
-### Creational Design Pattern
+### Creational Design Pattern - Creating object
 
-- [ ]  Builder
-- [ ]  Factories
-  - [ ]  Abstract Factory
-  - [ ]  Factory Method
-- [ ]  Prototype
+- [X]  Builder
+- [X]  Factories
+  - [X]  Abstract Factory
+  - [X]  Factory Method
+- [X]  Prototype
 - [ ]  Singleton
 
-### Structural Design Pattern
+### Structural Design Pattern  - class members, Good API design
 
 - [ ]  Adapter
 - [ ]  Bridge
@@ -22,7 +22,7 @@
 - [ ]  Facade
 - [ ]  Proxy
 
-### Behavioral Design Pattern
+### Behavioral Design Pattern - Both
 
 - [ ]  Chain of Responsibility
 - [ ]  Command
@@ -38,15 +38,4 @@
 
 ### Enterprise Design Patterns
 
-# SOLID Principle
-
-1. **Single Responsibility ** -> One class should have only 1 responsibility. Ex: Journal example. It helps to manage and update and maintain the code.
-   1. Guard object (anti pattern)- One hug class method that handles all functionality in one and avoid `Spaghetti code`
-   2. Separation of concern
-2. Open-closed principle-> open for extension and closed for modification. Use inheritance Ex: Filter
-   1. It avoid `State space explosion`
-   2. Specification Pattern helps us to achive that
-   3. Also help in separation of concern
-3. Liskov Substitution Principle -> States that if a function takes parent class, it should be able to accept child class without breaking. Ex- shape rect
-4. Interface Segregation Principle -> Base class should min methods.(YAGNI) and hence split Ex - Printer
-5. Dependency Inversion Principle -> High level module should not depend on level model like relationship.  use Abstractions
+# Creational
