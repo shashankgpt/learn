@@ -11,7 +11,8 @@
   - [X]  Abstract Factory
   - [X]  Factory Method
 - [X]  Prototype
-- [ ]  Singleton
+- [X]  Singleton
+  - [X]  Monostate
 
 ### Structural Design Pattern  - class members, Good API design
 
