@@ -16,12 +16,13 @@
 
 ### Structural Design Pattern  - class members, Good API design
 
-- [ ]  Adapter
-- [ ]  Bridge
-- [ ]  Composite
-- [ ]  Decorator
-- [ ]  Facade
-- [ ]  Proxy
+- [X]  Adapter
+- [X]  Bridge
+- [X]  Composite
+- [X]  Decorator
+- [X]  Facade
+- [X]  Flyweigh
+- [X]  Proxy
 
 ### Behavioral Design Pattern - Both
 
