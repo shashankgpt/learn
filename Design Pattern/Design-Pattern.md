@@ -27,12 +27,12 @@
 ### Behavioral Design Pattern - Both
 
 - [ ]  Chain of Responsibility
-- [ ]  Command
+- [X]  Command
 - [ ]  Interpreter
-- [ ]  Iterator
-- [ ]  Mediator
-- [ ]  Memento
-- [ ]  Observer
+- [X]  Iterator
+- [X]  Mediator
+- [X]  Memento
+- [X]  Observer
 - [ ]  State
 - [ ]  Strategy
 - [ ]  Template Method
