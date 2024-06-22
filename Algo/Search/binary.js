@@ -3,9 +3,7 @@ function binarySearch(arr, n) {
     let high = arr.length -1;
     let mid;
     while (low <= high) {
-        debugger;
          mid = Math.floor((high-low)/2);
-        console.log(mid);
         if (n === arr[mid]) {
             return mid
         } else if (n > arr[mid]) {

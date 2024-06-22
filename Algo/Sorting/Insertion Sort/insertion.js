@@ -16,4 +16,5 @@ i =1, 1
 j = 0, 3
 
 console.log(InsertionSort([3,1,4,7,6])) 
+
 // [1,3,4,7,6]
