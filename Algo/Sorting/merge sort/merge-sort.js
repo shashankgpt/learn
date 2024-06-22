@@ -34,9 +34,8 @@ function mergeSort(arr, p, r) {
         const q = parseInt((p +r) /2);
         mergeSort(arr, p, q);
         mergeSort(arr, q+1,r);
-        merge(arr,p,q,r); // min end -> [ , ] [ , ]
+        return merge(arr,p,q,r); // min end -> [ , ] [ , ]
     }
-    return arr;
 }
 
 console.log(mergeSort([2,4,5,7,1,2,3,6], 0 , 7));
