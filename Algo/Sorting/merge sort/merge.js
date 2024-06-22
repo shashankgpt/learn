@@ -14,7 +14,7 @@ L[L.length-1] = Infinity;
 R[R.length-1] = Infinity;
 i = 0;
 j = 0;
-for(let k =0; k< arr.length;k++) {
+for(let k =p; k<= r;k++) {
     if(L[i] <= R[j]) {
         arr[k] = L[i];
         i++;
