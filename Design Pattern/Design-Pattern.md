@@ -4,7 +4,7 @@
 
 ## Types of Pattern
 
-### Creational Design Pattern - Creating object
+### Creational Design Pattern - Creating object (4)
 
 - [X]  Builder
 - [X]  Factories
@@ -14,7 +14,7 @@
 - [X]  Singleton
   - [X]  Monostate
 
-### Structural Design Pattern  - class members, Good API design
+### Structural Design Pattern  - class members, Good API design (7)
 
 - [X]  Adapter
 - [X]  Bridge

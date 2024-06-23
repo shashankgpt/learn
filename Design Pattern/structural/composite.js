@@ -14,6 +14,10 @@ A mechanism for treating individual
 (scalar) objects and compositions of
 objects in a uniform manner.
 https://www.geeksforgeeks.org/composite-design-pattern-javascript-design-patterns/
+Imagine you are creating a drawing application where you can 
+draw basic shapes (like circles and rectangles) and combine these 
+shapes to create complex drawings (like a house made of rectangles and 
+  triangles).
  */
 
 class Component {
@@ -117,3 +121,61 @@ class ManyValues
 function sum(values) {
   return values.reduce((a, b) => a + b.sum(), 0);
 }
+
+/**
+ * Imagine you are creating a drawing application where you can draw basic shapes (like circles and rectangles) and combine these shapes to create complex drawings (like a house made of rectangles and triangles).
+ */
+class Graphic {
+  draw() {
+    throw "This method should be overridden!";
+  }
+}
+
+class Circle extends Graphic {
+  draw() {
+    console.log("Drawing a Circle");
+  }
+}
+
+class Rectangle extends Graphic {
+  draw() {
+    console.log("Drawing a Rectangle");
+  }
+}
+class CompositeGraphic extends Graphic {
+  constructor() {
+    super();
+    this.children = [];
+  }
+
+  add(graphic) {
+    this.children.push(graphic);
+  }
+
+  remove(graphic) {
+    const index = this.children.indexOf(graphic);
+    if (index > -1) {
+      this.children.splice(index, 1);
+    }
+  }
+
+  draw() {
+    for (const child of this.children) {
+      child.draw();
+    }
+  }
+}
+
+// Create individual shapes (leaves)
+const circle1 = new Circle();
+const circle2 = new Circle();
+const rectangle = new Rectangle();
+
+// Create a composite graphic
+const drawing = new CompositeGraphic();
+drawing.add(circle1);
+drawing.add(circle2);
+drawing.add(rectangle);
+
+// Draw the entire composite graphic
+drawing.draw();

@@ -54,3 +54,65 @@ object's features
 • May or may not forward calls
 to the underlying object
  */
+
+/*
+Imagine you are developing a notification system. 
+You start with a basic notification, but later, 
+you might want to add more features like sending 
+notifications via email, SMS, or push notifications.
+Instead of creating a complex class hierarchy, 
+you can use the Decorator Pattern to add these features dynamically.
+*/
+
+class Notification {
+    send() {
+      throw "This method should be overridden!";
+    }
+  }
+
+  class BasicNotification extends Notification {
+    send() {
+      console.log("Sending basic notification");
+    }
+  }
+  class NotificationDecorator extends Notification {
+    constructor(notification) {
+      super();
+      this.notification = notification;
+    }
+  
+    send() {
+      this.notification.send();
+    }
+  }
+
+  class EmailDecorator extends NotificationDecorator {
+    send() {
+      super.send();
+      console.log("Sending email notification");
+    }
+  }
+  
+  class SMSDecorator extends NotificationDecorator {
+    send() {
+      super.send();
+      console.log("Sending SMS notification");
+    }
+  }
+  
+  class PushDecorator extends NotificationDecorator {
+    send() {
+      super.send();
+      console.log("Sending push notification");
+    }
+  }
+
+  // Create a basic notification
+let notification = new BasicNotification();
+
+// Decorate it with email and SMS features
+notification = new EmailDecorator(notification);
+notification = new SMSDecorator(notification);
+
+// Send the notification
+notification.send();
