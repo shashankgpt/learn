@@ -40,4 +40,13 @@
 
 ### Enterprise Design Patterns
 
+* [ ]  DDD - Domain Driven Service
+* [ ]  Service Discovery Design Pattern
+* [ ]  SAGA Design Pattern
+* [ ]  Gatewya Pattern
+* [ ]  Bulk Heaf
+* [ ]  Rate limiter
+* [ ]  Retry
+* [ ]  curcit breaker
+
 # Creational

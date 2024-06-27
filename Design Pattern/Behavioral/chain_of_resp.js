@@ -6,121 +6,71 @@ having default processing implementation and
 an ability to terminate the processing chain.
  */
 
-class Creature {
-    constructor(name, attack, defense) {
-      this.name = name;
-      this.attack = attack;
-      this.defense = defense;
-    }
-  
-    toString() {
-      return `${this.name} (${this.attack}/${this.defense})`;
-    }
-  }
-  
-  class CreatureModifier
-  {
-    constructor(creature)
-    {
-      this.creature = creature;
-      this.next = null;
-    }
-  
-    add(modifier)
-    {
-        console.log(this, modifier)
-      if (this.next) this.next.add(modifier);
-      else this.next = modifier;
-    }
-  
-    handle()
-    {
-      if (this.next) this.next.handle();
-    }
-  }
-  
-  class NoBonusesModifier extends CreatureModifier
-  {
-    constructor(creature)
-    {
-      super(creature);
-    }
-  
-    handle()
-    {
-      console.log('No bonuses for you!');
-    }
-  }
-  
-  class DoubleAttackModifier extends CreatureModifier
-  {
-    constructor(creature)
-    {
-      super(creature);
-    }
-  
-    handle()
-    {
-      console.log(`Doubling ${this.creature.name}'s attack`);
-      this.creature.attack *= 2;
-      super.handle();
-    }
-  }
-  
-  class IncreaseDefenseModifier extends CreatureModifier
-  {
-    constructor(creature)
-    {
-      super(creature);
-    }
-  
-    handle() {
-      if (this.creature.attack <= 2)
-      {
-        console.log(`Increasing ${this.creature.name}'s defense`);
-        this.creature.defense++;
-      }
-      super.handle();
-    }
-  }
-  
-  let goblin = new Creature('Goblin', 1, 1);
-  console.log(goblin.toString());
-  
-  let root = new CreatureModifier(goblin);
-  console.log(root);
-  
-  //root.add(new NoBonusesModifier(goblin));
-  
-  root.add(new DoubleAttackModifier(goblin)); // root
-  //root.add(new DoubleAttackModifier(goblin));
-  
-  root.add(new IncreaseDefenseModifier(goblin));
-  
-  // eventually...
-  root.handle();
-  console.log(goblin.toString());
+/**
+ * Imagine you have a system for processing support tickets. 
+ * Each ticket might need to be handled by different levels of 
+ * support: Level 1 support, Level 2 support, or a supervisor. 
+ * Instead of hardcoding the logic to pass the ticket from 
+ * one handler to another, you can use the Chain of Responsibility pattern.
+ */
 
+class Handler {
+  setNext(handler) {
+    this.nextHandler = handler;
+    return handler;
+  }
 
-  /**
-   * Real life example https://www.calibraint.com/blog/chain-of-responsibility-design-pattern#:~:text=In%20this%20scenario%2C%20the%20Chain,next%20handler%20in%20the%20chain.
-   */
+  handle(request) {
+    if (this.nextHandler) {
+      return this.nextHandler.handle(request);
+    }
+    return null;
+  }
+}
 
-  
-  /**
-   * Command
-Query
-Separat
-Command
-Query
-Separation
-so Command = asking for an action
-or change (e.g., please set your
-attack value to 2).
-so Query = asking for information
-(e..g, please give me your attack
-value).
-CQS = having separate means of
-ling commands and queries to
-direct field access.
-   */
+class Level1Support extends Handler {
+  handle(request) {
+    if (request.level === 1) {
+      console.log("Level 1 support handling the request.");
+    } else {
+      return super.handle(request);
+    }
+  }
+}
+
+class Level2Support extends Handler {
+  handle(request) {
+    if (request.level === 2) {
+      console.log("Level 2 support handling the request.");
+    } else {
+      return super.handle(request);
+    }
+  }
+}
+
+class SupervisorSupport extends Handler {
+  handle(request) {
+    if (request.level === 3) {
+      console.log("Supervisor handling the request.");
+    } else {
+      return super.handle(request);
+    }
+  }
+}
+
+// Create the handlers
+const level1 = new Level1Support();
+const level2 = new Level2Support();
+const supervisor = new SupervisorSupport();
+
+// Create the chain
+level1.setNext(level2).setNext(supervisor);
+
+// Send requests to the chain
+const request1 = { level: 1, message: "Issue at level 1" };
+const request2 = { level: 2, message: "Issue at level 2" };
+const request3 = { level: 3, message: "Issue at level 3" };
+
+level1.handle(request1); // Level 1 support handling the request.
+level1.handle(request2); // Level 2 support handling the request.
+level1.handle(request3); // Supervisor handling the request.

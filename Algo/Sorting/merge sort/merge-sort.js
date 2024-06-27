@@ -1,5 +1,5 @@
 function merge(arr, p,q,r) {
-    const n1 = q-p+1; // 0 - 3 = 3
+    const n1 = q-p+1; // 3 - 0 = 3
     const n2 = r-q; // 7-3 = 4
     const L = new Array(n1+1);
     const R = new Array(n2+1);
