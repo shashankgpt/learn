@@ -6,6 +6,7 @@
 - [ ]  promises
 - [X]  Array flat
 - [ ]  autocomplete
+- [ ]  Debouncing with axios
 - [ ]  Create a react component which has 7 div. Click of each div it changes the color. Once all boxes are checked. Then in a interval of 100 ms. They should revert back
 - [ ]  Create a custom hook `useFetch`
 - [ ]  Design an Email Client like MS Outlook.
