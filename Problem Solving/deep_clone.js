@@ -1,15 +1,21 @@
 function deepClone(obj) {
-    if (!obj ||  typeof obj !== 'object') {
+    if (!obj || typeof obj !== 'object') {
         return obj
     }
 
-    const newObj = Array.isArray(obj) ? []: {};
-    for (key in obj) {
-        if (obj.hasOwnProperty(key)) {
-            newObj[key] = deepClone(obj[key])
-        }
-        
+    const newObj = Array.isArray(obj) ? []: {}
+    for (const key in obj) {
+        newObj[key] = deepClone(obj[key])
     }
-    return newObj
+    return newObj;
 }
 
+const a = {
+    name: 'shashank',
+    address: {
+        city: 'Ghaziabad',
+        country: 'India'
+    }
+}
+
+const b = deepClone(a)
