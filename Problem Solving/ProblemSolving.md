@@ -1,4 +1,20 @@
 # Questions
 
 - [ ]  [https://www.hackerrank.com/challenges/magic-square-forming/problem](https://www.hackerrank.com/challenges/magic-square-forming/problem)
-- [ ]  Deep clone
+- [X]  Deep clone
+- [ ]  curring
+- [ ]  promises
+- [X]  Array flat
+- [ ]  Create a react component which has 7 div. Click of each div it changes the color. Once all boxes are checked. Then in a interval of 100 ms. They should revert back
+- [ ]  Create a custom hook `useFetch`
+- [ ]  Design an Email Client like MS Outlook.
+- [ ]  Create a chat interface like MS teams.
+- [ ]  Create a Notification interface like MS teams.
+- [ ]  Design Snakes and ladders game
+- [ ]  design a ChessBoard
+- [ ] Implement a debounce function with javascript
+- [ ] Designing an image carousel
+- [ ] Given a file of size 50GB. you need to write a function findLargestK(int k) to find the largest k integers from that file.
+
+
+## Other Ref: https://www.frontendinterviewhandbook.com/company-interview-questions/
