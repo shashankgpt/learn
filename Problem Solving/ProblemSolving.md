@@ -22,7 +22,8 @@
 - [ ]  Create a Notification interface like MS teams.
 - [ ]  Design Snakes and ladders game
 - [ ]  design a ChessBoard
-- [ ]  Implement a debounce function with javascript
+- [X]  Implement a debounce function with javascript
+- [ ]  Implement a debounce function in react as hook
 - [ ]  Designing an image carousel
 - [ ]  Given a file of size 50GB. you need to write a function findLargestK(int k) to find the largest k integers from that file.
 - [ ]  You have a countdown timer that starts from an initial value and counts down to zero. When it reaches zero, it restarts from the initial value. Users can dynamically change the initial countdown value using an input field. The countdown should adapt to the new initial value immediately after the current countdown reaches zero.
