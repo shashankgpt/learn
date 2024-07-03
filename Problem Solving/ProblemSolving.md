@@ -2,6 +2,7 @@
 
 - [ ]  [https://www.hackerrank.com/challenges/magic-square-forming/problem](https://www.hackerrank.com/challenges/magic-square-forming/problem)
 - [X]  Deep clone
+- [X]  Two sum
 - [X]  curring
   - [X]  create a function that convert to currying
 - [ ]  promises
@@ -32,6 +33,7 @@
 - [ ]  Snake ladder
 - [ ]  Chess game
 
-## Other Ref: 
+## Other Ref:
+
 1. https://www.frontendinterviewhandbook.com/company-interview-questions/
 2. https://www.greatfrontend.com/
