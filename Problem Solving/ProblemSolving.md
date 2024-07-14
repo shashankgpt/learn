@@ -35,6 +35,10 @@
 - [ ]  Implement Stringify
 - [ ]  Deep clone with circular ref
 - [ ]  Clock in react
+- [ ]  type utlities 2
+- [ ]  classnames
+- [ ]  traffic light
+- [ ]  Create event emitter
 
 ## Other Ref:
 
