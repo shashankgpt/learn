@@ -32,6 +32,9 @@
   - [ ]  Without useEffect
 - [ ]  Snake ladder
 - [ ]  Chess game
+- [ ]  Implement Stringify
+- [ ]  Deep clone with circular ref
+- [ ]  Clock in react
 
 ## Other Ref:
 
