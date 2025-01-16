@@ -4,3 +4,6 @@
 * [ ]  Longest Consecutive Subsequence
 * [X]  Rearrange array in alternating positive & negative items with O(1) extra space | Set 1
 * [X]  Find the longest consecutive subsequence
+* [X]  Second largest
+* [X]  Zeros to the end
+* [ ]  Three sum
