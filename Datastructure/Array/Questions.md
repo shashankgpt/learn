@@ -6,4 +6,6 @@
 * [X]  Find the longest consecutive subsequence
 * [X]  Second largest
 * [X]  Zeros to the end
-* [ ]  Three sum
+* [X]  Three sum
+* [ ]  Monotonic array
+* [ ]  Longest peak

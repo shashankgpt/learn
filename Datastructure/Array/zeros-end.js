@@ -5,7 +5,6 @@ const a = [1, 2, 3, 4, 5];
 const zerosEnd = () => {
     if (a.length < 2) return a;
     let pointer = 0;
-    debugger;
     for (let i =0; i<a.length;i++) {
     if(a[i] !== 3) {
         [a[i], a[pointer]] = [a[pointer], a[i]]
