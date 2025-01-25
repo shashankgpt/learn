@@ -10,3 +10,4 @@
 * [ ]  Monotonic array
 * [X]  Longest peak
 * [ ]  Sparial Traverse
+* [ ]  Beat Seat
