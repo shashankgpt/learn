@@ -8,4 +8,5 @@
 * [X]  Zeros to the end
 * [X]  Three sum
 * [ ]  Monotonic array
-* [ ]  Longest peak
+* [X]  Longest peak
+* [ ]  Sparial Traverse
