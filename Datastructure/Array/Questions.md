@@ -10,4 +10,6 @@
 * [ ]  Monotonic array
 * [X]  Longest peak
 * [ ]  Sparial Traverse
-* [ ]  Beat Seat
+* [X]  Beat Seat
+* [X]  Sweet & Savory
+* [ ]  4 sum
