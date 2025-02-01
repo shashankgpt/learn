@@ -13,3 +13,5 @@
 * [X]  Beat Seat
 * [X]  Sweet & Savory
 * [ ]  4 sum
+* [ ]  subarray
+* [ ]  largest range
