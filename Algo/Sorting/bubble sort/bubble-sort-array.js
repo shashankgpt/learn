@@ -1,4 +1,4 @@
- const arr = [64, 34, 25, 12, 22, 11, 90];
+const arr = [64, 34, 25, 12, 22, 11, 90];
 // always n2
 const sort = (a) => {
     let len = a.length;

@@ -17,3 +17,4 @@
 * [X]  largest range
 * [ ]  back track
 * [ ]  longest subarray with sum
+* [ ]  count square
