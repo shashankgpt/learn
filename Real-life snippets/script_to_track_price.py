@@ -3,7 +3,8 @@ import pandas as pd
 import matplotlib.pyplot as plt
 import matplotlib.dates as mdates
 from scipy.signal import argrelextrema
-from datetime import datetime
+from datetime import datetime, timedelta
+
 
 data =  [
         {
@@ -5112,57 +5113,52 @@ data =  [
     ]
 
 
-# Convert to DataFrame
 df = pd.DataFrame(data)
 df["date"] = pd.to_datetime(df["date"])
 
-# Detect local minima (support) and maxima (resistance)
-window = 20  # Adjust sensitivity
+# ZigZag Detection - Identify Local Min & Max
+window = 20  # Sensitivity of trend detection
 df["min"] = df.iloc[argrelextrema(df["low"].values, np.less_equal, order=window)[0]]["low"]
 df["max"] = df.iloc[argrelextrema(df["high"].values, np.greater_equal, order=window)[0]]["high"]
 
-# Remove NaN values
+# Drop NaNs
 support_points = df.dropna(subset=["min"])
 resistance_points = df.dropna(subset=["max"])
 
-# Identify different trend segments
-trend_segments = []  # Will store (start_idx, end_idx)
+# Create trendlines
+x_vals = mdates.date2num(df["date"])
+support_fit = np.polyfit(mdates.date2num(support_points["date"]), support_points["min"], 1)
+resistance_fit = np.polyfit(mdates.date2num(resistance_points["date"]), resistance_points["max"], 1)
 
-for i in range(1, len(df) - 1):
-    if df["close"].iloc[i] > df["close"].iloc[i - 1] and df["close"].iloc[i] > df["close"].iloc[i + 1]:
-        trend_segments.append(i)
+# Predict Future Trendlines
+future_days = 15  # Days to predict
+last_date = df["date"].iloc[-1]
+future_dates = [last_date + timedelta(days=i) for i in range(1, future_days + 1)]
+future_x = mdates.date2num(future_dates)
 
-# Store trend lines
-trend_lines = []
+future_support = np.poly1d(support_fit)(future_x)
+future_resistance = np.poly1d(resistance_fit)(future_x)
 
-for i in range(len(trend_segments) - 1):
-    start, end = trend_segments[i], trend_segments[i + 1]
-    segment = df.iloc[start:end]
-
-    if len(segment) > 1:
-        x_vals = mdates.date2num(segment["date"])
-
-        # Fit trend lines
-        support_fit = np.polyfit(x_vals, segment["low"], 1)
-        resistance_fit = np.polyfit(x_vals, segment["high"], 1)
-
-        trend_lines.append((segment["date"], np.poly1d(support_fit)(x_vals), np.poly1d(resistance_fit)(x_vals)))
-
-# Plot chart
+# Plot
 fig, ax = plt.subplots(figsize=(12, 6))
 
 ax.plot(df["date"], df["close"], color="yellow", label="Close Price", linewidth=1)
+ax.scatter(support_points["date"], support_points["min"], color="green", label="Support Points", marker="o")
+ax.scatter(resistance_points["date"], resistance_points["max"], color="red", label="Resistance Points", marker="o")
 
-# Plot each detected trend
-for dates, support, resistance in trend_lines:
-    ax.plot(dates, support, "g--", linewidth=1.5)
-    ax.plot(dates, resistance, "r--", linewidth=1.5)
-    ax.fill_between(dates, support, resistance, color="gray", alpha=0.3)
+# Plot Trendlines
+ax.plot(df["date"], np.poly1d(support_fit)(x_vals), "g--", linewidth=1.5, label="Current Support")
+ax.plot(df["date"], np.poly1d(resistance_fit)(x_vals), "r--", linewidth=1.5, label="Current Resistance")
+
+# Plot Future Trendlines
+ax.plot(future_dates, future_support, "g--", linewidth=1.5, alpha=0.7, label="Predicted Support")
+ax.plot(future_dates, future_resistance, "r--", linewidth=1.5, alpha=0.7, label="Predicted Resistance")
+ax.fill_between(future_dates, future_support, future_resistance, color="gray", alpha=0.2)
 
 ax.xaxis.set_major_formatter(mdates.DateFormatter("%Y-%m-%d"))
-ax.xaxis.set_major_locator(mdates.MonthLocator())
+ax.xaxis.set_major_locator(mdates.DayLocator(interval=5))
 
-plt.title("Multiple Trend Channels")
+plt.title("Stock Trend Prediction for Next 15 Days")
 plt.xlabel("Date")
 plt.ylabel("Price")
 plt.legend()
