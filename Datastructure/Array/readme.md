@@ -19,3 +19,4 @@
 * [ ]  longest subarray with sum
 * [ ]  count square
 * [ ]  subarray zero
+* [ ]  appartment hunting
