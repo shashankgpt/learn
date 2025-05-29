@@ -1,13 +1,15 @@
 function underscorifySubstring(string, substring) {
+  console.log(string.split(''))
   let r1 = underscorifySubstringC(string, substring);
-
+  console.log(r1);
+debugger;
   if (r1.length < 1) {
     return string;
   }
   for (let i = 1; i < r1.length; i++) {
     const item = r1[i];
     const prevItem = r1[i - 1];
-    if (item[0] === prevItem[1] || item[0] === prevItem[1] + 1) {
+    if (item[0] <= prevItem[1]) {
       r1[i][0] = prevItem[0];
       r1[i - 1] = null;
     }
@@ -19,41 +21,31 @@ function underscorifySubstring(string, substring) {
   for (let i = 0; i < string.length; i++) {
     let char = string[i];
     if (final[j] === i) {
-      if (j % 2 === 0) {
-        char = "_" + char;
-      } else {
-        char = char + "_";
-      }
+      char = '_'+char
       j++;
     }
     finalString += char;
+  }
+
+  if (final[j] === string.length) {
+    finalString += '_';
   }
   return finalString;
 }
 
 function underscorifySubstringC(string, substring) {
-  debugger;
-  let p = 0;
   const r = [];
-  const isSame = substring[substring.length -1] === substring[substring.length-2]
-  for (let i = 0; i < string.length; i++) {
-    if (p >= substring.length) {
-      r.push([i - substring.length, i - 1]);
-      p = 0;
+  let i =0
+  while (i<= string.length - substring.length) {
+    if (string.substring(i, i+ substring.length) === substring) {
+      r.push([i, i+ substring.length])
     }
-    if (substring[p] === string[i]) {
-      p++;
-    } else if (substring.length > 1 && !isSame && substring[p] === string[i - 1]) {
-      i = i - 1;
-      p++;
-    } else {
-      p = 0;
-    }
+    i++
   }
   return r;
 }
 
 underscorifySubstring(
-  "tzttztttz",
+  "ttttttttttttttbtttttctatawtatttttastvb",
   "ttt"
 );
