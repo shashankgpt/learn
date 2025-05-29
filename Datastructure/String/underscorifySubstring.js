@@ -1,5 +1,6 @@
 function underscorifySubstring(string, substring) {
   let r1 = underscorifySubstringC(string, substring);
+
   if (r1.length < 1) {
     return string;
   }
@@ -31,8 +32,10 @@ function underscorifySubstring(string, substring) {
 }
 
 function underscorifySubstringC(string, substring) {
+  debugger;
   let p = 0;
   const r = [];
+  const isSame = substring[substring.length -1] === substring[substring.length-2]
   for (let i = 0; i < string.length; i++) {
     if (p >= substring.length) {
       r.push([i - substring.length, i - 1]);
@@ -40,7 +43,7 @@ function underscorifySubstringC(string, substring) {
     }
     if (substring[p] === string[i]) {
       p++;
-    } else if (substring[p] === string[i - 1]) {
+    } else if (substring.length > 1 && !isSame && substring[p] === string[i - 1]) {
       i = i - 1;
       p++;
     } else {
@@ -51,6 +54,6 @@ function underscorifySubstringC(string, substring) {
 }
 
 underscorifySubstring(
-  "testthis is a testtest to see if testestest it works",
-  "test"
+  "tzttztttz",
+  "ttt"
 );
