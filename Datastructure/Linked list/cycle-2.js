@@ -21,11 +21,8 @@ n1.next = n2;
 n2.next = n3;
 n3.next = n4;
 n4.next = n5;
-n5.next = n6;
-n6.next = n7;
-n7.next = n8;
-n8.next = n9;
-n9.next = n3;
+n5.next = n3
+
 
 var hasCycle = function(head) {
     let slow = head;
@@ -33,6 +30,7 @@ var hasCycle = function(head) {
     while (fast && fast.next) {
         slow = slow.next;
         fast = fast.next.next;
+        debugger;
         if (slow === fast) {
             return slow
         }
