@@ -18,4 +18,4 @@ function secondLargest(nums) {
         return secondLargest
 }
 
-console.log(secondLargest( [7,7,2,2,10,10,10]))
+console.log(secondLargest( [7,7,2,,10,2,10,10,10]))
